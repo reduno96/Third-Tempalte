@@ -559,6 +559,20 @@ position: relative;
     border-width: 0px 668px 175px 0px;
 }
 
+@media (max-width: 684px){
+    .feature .box .img-holder::after {
+        border-width:0 0 167px 608px;
+
+    }
+}
+
+@media (max-width: 503px){
+    .feature .box .img-holder::after {
+        border-width: 0 0 95px 500px;
+
+    }
+}
+
 .feature .box .img-holder img {
     max-width: 100%;
 }
@@ -589,11 +603,11 @@ position: relative;
 
 .feature .box a {
     display: block;
-    border: 5px solid transparent;
+    border: 1px solid transparent;
     width: fit-content;
     margin: 0 auto 30px;
-    font-weight: bold;
-    font-size: 22px;
+    font-weight: 900;
+    font-size: 26px;
     padding: 10px 30px;
     border-radius: 7px;
     transition: var(--main-transition);
@@ -638,6 +652,7 @@ position: relative;
 
 .feature .box:hover a{
     background-position: left bottom;
+    border: none;
     color: white;
 }
 
