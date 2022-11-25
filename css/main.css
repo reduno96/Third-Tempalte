@@ -9,7 +9,8 @@
     --main-color: #f0ac2f; 
     --main-color-alt: #e4a126;
     --parg-color: #777;
-    --border-color: #e9e6E9;  
+    --border-color: #e9e6E9; 
+    --backgr-color: #ececec; 
     --main-transition: .5s;
     --main-padding-top: 100px;
     --main-padding-bottom: 100px;
@@ -155,7 +156,7 @@ ul {
 .header .main-nav > li:hover .mega-menu {
     opacity: 1;
     z-index: 100;
-    top: calc(100% - 1px);
+    top: calc(100% + 1px);
 }
 
 .header .main-nav > li > a {
@@ -205,7 +206,7 @@ ul {
     padding: 30px;
     background-color: white;
     border-bottom: 3px solid var(--main-color);
-    z-index: 100;
+    z-index: -1;
     display: flex;
     gap: 40px;
     top: calc(100% + 50px);
@@ -246,7 +247,7 @@ ul {
     left: 0;
     top: 0;
     height: 100%;
-    background-color: #e3f7f0;
+    background-color: #f7e3e3;
     z-index: -1;
     transition: var(--main-transition);
 }
@@ -388,6 +389,7 @@ position: relative;
 .articles {
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
+    position: relative;
 }
 
 .articles .container {
@@ -456,6 +458,58 @@ position: relative;
 }
 /* End Articals */
 
+/* Start Gallery */
+.gallery {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--backgr-color);
+}
+
+.gallery .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+.gallery .box {
+    padding: 15px;
+    background-color: white; 
+    -webkit-box-shadow: -6px 4px 10px 0px rgba(130, 125, 130, 0.2);
+    -moz-box-shadow: -6px 4px 10px 0px rgba(130, 125, 130, 0.2);
+    box-shadow: -6px 4px 10px 0px rgba(130,125,130,0.2);
+}
+
+.gallery .box .image {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery .box .image::before {
+    content: "";
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 0px; 
+    height: 0px;
+    opacity: 0;
+    z-index: 2;
+}
+
+.gallery .box .image:hover::before {
+    animation: flashing var(--main-transition);
+}
+.gallery .box img {
+    max-width: 100%;
+    transition: var(--main-transition);
+}
+
+.gallery .box .image:hover img {
+    transform: rotate(5deg) scale(1.2)
+}
+/* End Gallery */
+
 /* Start Animation */
 @keyframes up-and-down {
     0%, 100% {
@@ -512,6 +566,17 @@ position: relative;
 @keyframes moving-arrow {
     100% {
         transform: translateX(10px);
+    }
+}
+
+@keyframes flashing {
+    0%, 40% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0; 
+        width: 200%;
+        height: 200%;
     }
 }
 /* End Animation */
