@@ -807,6 +807,7 @@ position: relative;
 }
 
 .team .box .data .social i {
+    font-size: 20px;
     color: var(--parg-color);
     transition: var(--main-transition);   
 }
@@ -828,8 +829,162 @@ position: relative;
     margin-top: 10px;
     margin-bottom: 25px
 }
-
 /* End Team */
+
+/* Start Services */
+.service {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--backgr-color);
+}
+
+.service .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.service .box {
+    background-color: white;
+    -webkit-box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.2),
+     0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.2),
+     0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.2),
+     0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    counter-increment: service;
+    position: relative;
+    transition: var(--main-transition);
+}
+
+.service .box::before {
+    content: "";
+    position: absolute;
+    top: -3;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 0;
+    background-color: var(--main-color);
+    transition: var(--main-transition);
+}
+
+.service .box:hover::before { 
+    width: 100%;
+}
+
+.service .box:hover {
+    transform: translateY(-10px);
+}
+
+.service .box > i {
+    margin: 30px auto 20px;
+    display: block;
+    text-align: center;
+    color: #D5D5D5; 
+}   
+
+.service .box > h3 {
+    text-align: center;
+    margin: 20px 0 40px;
+    font-size: 25px;
+    color: var(--main-color);
+}
+
+.service .box .info {
+    padding: 15px;
+    position: relative;
+    background-color: #fbfbfb;     
+    text-align: right;
+}
+
+.service .box .info::before {
+    content: "0" counter(service);
+    position: absolute;
+    background-color: var(--main-color);
+    color: white;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 80px;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.service .box .info::after {
+    content: "";
+    position: absolute;
+    background-color: #D5D5D5;
+    left: 80px;
+    top: 0;
+    width: 50px;
+    height: calc(100% + 0.4px);
+    transform: skew(-30deg)
+}
+
+.service .box .info a {
+    color: var(--main-color)
+}
+
+/* Start Skills */
+.our-skill {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+}
+
+.our-skill .container {
+    display: flex;
+    align-items: center;    
+}
+
+@media screen and (max-width: 991px) {
+    .our-skill img {
+        display: none;
+    }
+}
+
+.our-skill .skills {
+    flex: 1;    
+}
+
+.our-skill .skill h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.our-skill .skill h3 span {
+    font-size: 12px;
+    border: 1px solid #ccc;
+    padding: 3px 5px;
+    border-radius: 4px;
+    color: var(--main-color);
+}
+
+.our-skill .skill .the-progress {
+    height: 30px;
+    background-color: #eee;
+    position: relative;
+    
+}
+.our-skill .skill .the-progress span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--main-color)
+    
+}
+/* End Skills */ 
+
+/* End Services */
+
 /* Start Animation */
 @keyframes up-and-down {
     0%, 100% {
