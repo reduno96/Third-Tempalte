@@ -250,7 +250,7 @@ ul {
     left: 0;
     top: 0;
     height: 100%;
-    background-color: #f7e3e3;
+    background-color: #ade3f071;
     z-index: -1;
     transition: var(--main-transition);
 }
@@ -930,6 +930,7 @@ position: relative;
 .service .box .info a {
     color: var(--main-color)
 }
+/* End Services */
 
 /* Start Skills */
 .our-skill {
@@ -984,7 +985,78 @@ position: relative;
 }
 /* End Skills */ 
 
-/* End Services */
+/* Start Work Step */
+.work-step {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--backgr-color);
+}
+
+.work-step .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+}
+@media screen and (max-width: 991px) {
+    .work-step .container {
+        flex-direction: column;
+    }
+}
+
+.work-step .image {
+    max-width: 100%;
+}
+
+.work-step .info .box {
+    background-color: #f6f5f5;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    border: 2px solid white;
+    position: relative;
+    z-index: 1;
+}
+
+.work-step .info .box::before {
+    content: "";
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    background-color: #ededed;
+    z-index: -1;
+    transition: var(--main-transition);
+}
+
+.work-step .info .box:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.work-step .info .box img {
+    width: 64px;
+    margin-right: 30px;
+}
+
+.work-step .info .box h3 {
+    margin: 0;
+    font-size: 22px;
+    
+}
+
+.work-step .info .box p {
+    color: var(--parg-color);
+    line-height: 1.7;
+    margin: 10px 0 0;
+    font-size: 18px;
+}
+/* End Work Step */
 
 /* Start Animation */
 @keyframes up-and-down {
