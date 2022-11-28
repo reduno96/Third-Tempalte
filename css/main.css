@@ -287,7 +287,6 @@ ul {
 
 .landing {
 position: relative;
-
 }
 
 .landing::before{
@@ -326,7 +325,7 @@ position: relative;
     letter-spacing: -2px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px)  {
     .landing .text h1 {
         font-size: 28px;
     }
@@ -344,6 +343,21 @@ position: relative;
     .landing .text p {
         font-size: 18px;
     }
+}
+
+@media (max-height:425px) and (orientation:landscape) {
+    .landing .text {
+        margin-top: 45px; 
+    }
+
+    .landing .text h1 {
+        font-size: 35px;
+    }
+
+    .landing .text p {
+        font-size: 20px;
+    }
+
 }
 
 @media (max-width: 991px) {
@@ -1175,7 +1189,7 @@ position: relative;
     caret-color: var(--main-color);
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 991px) {
     .event .subscribe form input[type="email"] {
         border-radius: 7px;
     }
