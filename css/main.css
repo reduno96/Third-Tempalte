@@ -1423,7 +1423,7 @@ position: relative;
 
 .video .holder .list ul li:hover {
     background-color: #f0ac2f4d;
-    font-weight: bold;
+    font-size: 17px;
 }
 
 .video .holder .list ul li span {
@@ -1449,8 +1449,213 @@ position: relative;
     background-color: white;
     margin-top: 10px;
 }
-
 /* End video */
+
+/* Start stat */
+.stat {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-image: url("/img/stats.jpg");
+    background-size: cover;
+    min-height: 300px;
+}
+
+.stat::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.stat h2 {
+    font-weight: bold;
+    font-size: 40px;
+    width: fit-content;
+    margin: 0 auto 50px;
+    position: relative;
+}
+
+.stat .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.stat .box {   
+    position: relative;
+    text-align: center;
+    padding: 30px 15px;
+    background-color: white;
+    opacity: .8;
+    transition: var(--main-transition);
+}
+
+.stat .box:hover {
+    opacity: 1;
+}
+
+.stat .box::before,
+.stat .box::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 0;
+    background-color: var(--main-color);
+    transition: 1s;
+}
+
+.stat .box::before {
+    top: 0;
+    right: 0;
+}
+
+.stat .box::after {
+    bottom: 0;
+    left: 0;
+} 
+
+.stat .box:hover::before {
+    height: 100%;
+}
+
+.stat .box:hover::after {
+    height: 100%;
+}
+
+.stat .box .number {
+    display: block;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.stat .box .text {
+    color: var(--main-color);
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bold;  
+}
+/* End Stat */
+
+/* Start Discount */
+.discount {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.discount .content {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.discount .content h2 {
+    font-size: 40px;
+    letter-spacing: -2px;
+}
+
+.discount .content p {
+    line-height: 1.6;
+    font-size: 18px;
+    max-width: 500px;
+}
+
+.discount .image {
+    background-image: url("../img/discount-background1.jpg");
+    background-size: cover;
+    color: white;
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    animation: change-bgr 10s linear infinite;
+}
+
+.discount .image::before {
+    content:""; 
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(39, 87%, 56%, 0.97);
+    z-index: -1;
+}
+
+.discount .content img {
+    width: 300px;
+    max-width: 100%;
+}
+
+@media (max-width: 991px) {
+    .discount .content img {
+        margin-bottom: 10px;
+    }
+    .discount .image {
+        flex-basis: 100%;
+    }
+
+}
+
+.discount .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 50%;
+}
+@media (max-width: 991px) {
+    .discount .form {
+        flex-basis: 100%;
+        margin-top: 20px;
+    }
+}
+
+.discount .form .input {
+    display: block;
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 15px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background-color: #F9F9F9; 
+    caret-color: var(--main-color);  
+}
+
+.discount .form textarea.input {
+    resize: none;
+    height: 200px;   
+}
+
+.discount .form .input:focus {
+    outline: none;
+}
+
+.discount .form [type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: var(--main-transition);  
+}
+
+.discount .form [type="submit"]:hover {
+    background-color: var(--main-color-alt);  
+}
+
+/* End Discount */
+
 /* Start Animation */
 @keyframes up-and-down {
     0%, 100% {
@@ -1518,6 +1723,16 @@ position: relative;
         opacity: 0; 
         width: 200%;
         height: 200%;
+    }
+}
+
+@keyframes change-bgr {
+    0%, 100% {
+        background-image: url("../img/discount-background1.jpg") 
+    }
+
+    50% {
+        background-image: url("../img/discount-background2.jpg") 
     }
 }
 /* End Animation */
