@@ -1640,7 +1640,7 @@ position: relative;
 .discount .form [type="submit"] {
     display: block;
     width: 100%;
-    padding: 15px;
+    padding: 16px;
     background-color: var(--main-color);
     color: white;
     font-weight: bold;
