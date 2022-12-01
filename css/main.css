@@ -1421,10 +1421,18 @@ position: relative;
     transition: var(--main-transition);
 }
 
+.video .holder .list ul li.active {
+    background-color: #f0ac2f4d;
+    font-size: 17px;
+    border-top: 1px solid #f0ac2f78;
+    border-bottom: 1px solid #f0ac2f78
+}
+
 .video .holder .list ul li:hover {
     background-color: #f0ac2f4d;
     font-size: 17px;
 }
+
 
 .video .holder .list ul li span {
     display: block;
